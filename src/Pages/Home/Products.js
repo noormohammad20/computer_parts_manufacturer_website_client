@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import useProducts from '../../hooks/useProducts'
 import ProductCards from './ProductCards'
 
 const Products = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/product')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+    const [products] = useProducts()
     return (
         <>
             <h2 className='text-5xl text-primary text-center font-bold my-6'>Our Products</h2>

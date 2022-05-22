@@ -6,7 +6,6 @@ import Login from './Pages/Login/Login'
 import RequireAuth from './Pages/Login/RequireAuth'
 import Signup from './Pages/Login/Signup'
 import Purchase from './Pages/Purchase/Purchase'
-import Footer from './Pages/Shared/Footer'
 import Navbar from './Pages/Shared/Navbar'
 
 function App() {
@@ -16,14 +15,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />
-        <Route path='purchase' element={
+        <Route path='/product/:id' element={
           <RequireAuth>
             <Purchase />
           </RequireAuth>} />
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<Signup />} />
       </Routes>
-      <Footer />
+
     </div>
   )
 }

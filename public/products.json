@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Borderless Slim Monitor ",
+        "image": "https://www.ryanscomputers.com/cdn/products/small/Asus%20VZ229HE%2021.5%20Inch%20IPS%20Borderless%20Slim_11542970126.webp",
+        "description": "ASUS VZ229HE has a space-saving design with an ultra-slim profile that measures a mere 7mm at its thinnest point. Its frameless design makes it perfect for almost-seamless multi-display setups that give you an even greater degree of immersion.\r\n",
+        "pricePerPice": 3000,
+        "minimumOrder": 25,
+        "availableQuantity": 388
+    },
+    {
+        "name": "120GB SSD ",
+        "image": "https://www.ryanscomputers.com/cdn/products/small/gigabyte-ud-pro-120gb-25in-sataiii-ssd-11546415927.webp",
+        "description": "The newly updated SSD Tool Box is an application that helps users monitor SSD Status, provides general information such as model name.\r\n",
+        "pricePerPice": 700,
+        "minimumOrder": 50,
+        "availableQuantity": 1200
+    },
+    {
+        "name": "USB Mini Keyboard",
+        "image": "https://www.ryanscomputers.com/cdn/products/small/skyloong-sk61-black-hot-swap-wired-red-switch-11647774848.webp",
+        "description": "Compact design, Spill resistant design, Chocolate key cap, comfortable typing, With Number Lock function, Strong structure, more durable, Clearly letters with UV oil painting, USB 2.0 interface, plug & play, USB Mini Keyboard .\r\n",
+        "pricePerPice": 300,
+        "minimumOrder": 70,
+        "availableQuantity": 209
+    },
+    {
+        "name": "Flair CZ73 32GB ",
+        "image": "https://www.ryanscomputers.com/cdn/products/small/sandisk-ultra-flair-cz73-32gb-usb-30-silver-pen-11652945468.webp",
+        "description": " Silver Color, Speed Meets Style, Fly through file transfers, Stylish and tough, Password-protect files, With a durable metal case, the SanDisk Ultra Flair USB 3.0 flash drive is both sleek and ready to handle unexpected knocks.\r\n",
+        "pricePerPice": 299,
+        "minimumOrder": 200,
+        "availableQuantity": 2000
+    },
+    {
+        "name": "Socket DDR3 Mainboard ",
+        "image": "https://www.ryanscomputers.com/cdn/products/small/biostar-h81mhv3-lga-1150-socket-ddr3-mainboard-21551598894.webp",
+        "description": "Windows 8 Ready, Supports Solid capacitor, Supports Charger Booster, Supports BIOS Online Update\r\n",
+        "pricePerPice": 1200,
+        "minimumOrder": 100,
+        "availableQuantity": 500
+    },
+    {
+        "name": "MSI Modern 14 B10MW",
+        "image": "https://www.ryanscomputers.com/cdn/products/small/msi-modern-14-b10mw-10th-gen-intel-core-i3-10110u-11646643648.webp",
+        "description": "Mentioned Battery Backup information is collected from manufacturer. As per manufacturer the backup time may very for different use case, settings, applications and some other factors..\r\n",
+        "pricePerPice": 30000,
+        "minimumOrder": 15,
+        "availableQuantity": 900
+    }
+]

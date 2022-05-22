@@ -11,15 +11,17 @@ const Navbar = () => {
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/">Home</Link></li>
+                        <li><Link to="/purchase">Purchase</Link></li>
                         <li><Link to="/myPortfolio">My Portfolio</Link></li>
                         <li><Link to="/login">Login</Link></li>
                     </ul>
                 </div>
-                <Link to="/" class="btn btn-ghost normal-case text-xl">Computer Parts Manufacturer</Link>
+                <Link to="/" class="btn btn-ghost normal-case text-xl text-primary font-bold">Computer Parts Manufacturer</Link>
             </div>
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <li><Link to="/">Home</Link></li>
+                    <li><Link to="/purchase">Purchase</Link></li>
                     <li><Link to="/myPortfolio">My Portfolio</Link></li>
                     <li><Link to="/login">Login</Link></li>
                 </ul>

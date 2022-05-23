@@ -48,6 +48,7 @@ const Purchase = () => {
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div className='flex justify-center items-center '>
                         <div class="card w-full max-w-sm shadow-2xl bg-base-100">
+                            <h1 className='text-2xl font-bold text-center text-secondary mt-2'>Your Info</h1>
                             <div class="card-body">
                                 <div class="form-control">
                                     <input disabled type="text" placeholder="email" class="input input-bordered" value={user?.displayName} />
@@ -67,15 +68,15 @@ const Purchase = () => {
                     </div>
                     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                            <h1 className='text-3xl text-accent font-bold text-center'>Product Detail</h1>
+                            <h1 className='text-3xl text-accent font-bold text-center mt-3'>Product Detail</h1>
                             <figure><img src={image} alt="Shoes" /></figure>
                             <div class="card-body">
                                 <h2 class="card-title">name:{name}</h2>
-                                <small>{description}</small>
-                                <p><span>Price(per unit): ${pricePerPice}</span></p>
-                                <p><span>min order: {minimumOrder} Pice</span></p>
-                                <p><span>available: {availableQuantity} Pice</span></p>
-                                <p><span>order quantity:{ }  </span></p>
+                                <small className='font-bold'>{description}</small>
+                                <p><span className='font-bold'>Price(per unit): ${pricePerPice}</span></p>
+                                <p><span className='font-bold'>min order: {minimumOrder} Pice</span></p>
+                                <p><span className='font-bold'>available: {availableQuantity} Pice</span></p>
+                                <p><span className='font-bold'>order quantity:{ }  </span></p>
 
                                 <input type="number"
                                     name='orderQuantity'

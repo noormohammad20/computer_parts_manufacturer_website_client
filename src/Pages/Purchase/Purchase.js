@@ -9,7 +9,7 @@ const Purchase = () => {
     const [product, setProduct] = useState({})
     const { _id, name, image, pricePerPice, availableQuantity, minimumOrder, description } = product
     const [user] = useAuthState(auth)
-
+    const [quantity, setQuantity] = useState(false)
     useEffect(() => {
         const url = `http://localhost:5000/product/${id}`
         fetch(url)
@@ -42,6 +42,22 @@ const Purchase = () => {
                 toast.success('Successfully place your order')
             })
     }
+    const handleQuantity = (e) => {
+        const value = parseInt(e.target.value)
+        if (value < minimumOrder || value > availableQuantity) {
+            setQuantity(true)
+        }
+        else {
+            setQuantity(false)
+        }
+
+    }
+    useEffect(() => {
+        if (quantity) {
+            toast.error(`Sorry You Cannot Order Less than ${minimumOrder} And You Cannot Order More Than The ${availableQuantity} `)
+        }
+    }, [quantity, minimumOrder, availableQuantity])
+
     return (
         <div class="hero min-h-screen bg-base-200">
             <form onSubmit={handleOrder}>
@@ -76,16 +92,18 @@ const Purchase = () => {
                                 <p><span className='font-bold'>Price(per unit): ${pricePerPice}</span></p>
                                 <p><span className='font-bold'>min order: {minimumOrder} Pice</span></p>
                                 <p><span className='font-bold'>available: {availableQuantity} Pice</span></p>
-                                <p><span className='font-bold'>order quantity:{ }  </span></p>
 
-                                <input type="number"
+                                <input
+                                    onChange={handleQuantity}
+                                    type="number"
                                     name='orderQuantity'
-                                    min={minimumOrder}
-                                    max={availableQuantity}
                                     minValue={minimumOrder}
                                     placeholder="your quantity" class="input input-bordered form-control" />
 
-                                <input type="submit" value="confirm order" className="btn btn-secondary w-full max-w-xs" />
+                                {
+                                    quantity ? <input disabled type="submit" value="confirm order" className="btn btn-secondary w-full max-w-xs " /> : <input type="submit" value="confirm order" className="btn btn-secondary w-full max-w-xs" />
+                                }
+
 
                             </div>
                         </div>

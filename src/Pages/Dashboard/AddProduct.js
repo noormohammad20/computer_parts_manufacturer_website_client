@@ -22,7 +22,7 @@ const AddProduct = () => {
                     const img = result.data.url
                     const product = {
                         name: data.name,
-                        des: data.description,
+                        description: data.description,
                         pricePerPice: data.price,
                         minimumOrder: data.minimumOrder,
                         availableQuantity: data.availableQuantity,

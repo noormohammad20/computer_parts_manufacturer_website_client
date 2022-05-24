@@ -3,12 +3,7 @@ import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import { loadStripe } from '@stripe/stripe-js'
 import Loading from '../Shared/Loading'
-import {
-    CardElement,
-    Elements,
-    useStripe,
-    useElements,
-} from '@stripe/react-stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
 import CheckoutForm from './CheckoutForm'
 
 const stripePromise = loadStripe('pk_test_51L0UwIL7AxqzKmmPbosdUCE6ovKhhw0MlVsYBshVWDcn9HTNGloXhZGn3cwwLs3XzLOIWMKhYhhdi0sdIbvnkWbu00xOlLaiMG')

@@ -26,7 +26,8 @@ const Purchase = () => {
             userEmail: user.email,
             userPhone: e.target.phone.value,
             userAddress: e.target.address.value,
-            orderQuantity: e.target.orderQuantity.value
+            orderQuantity: e.target.orderQuantity.value,
+            price: pricePerPice * e.target.orderQuantity.value
 
         }
         fetch('http://localhost:5000/order', {

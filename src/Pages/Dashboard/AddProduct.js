@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 const AddProduct = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm()
+    const { register, formState: { errors }, handleSubmit, reset } = useForm()
     const imgStorageKey = '973b31c6dcc050bcb8d1db2dd1654620'
 
 
@@ -16,19 +17,38 @@ const AddProduct = () => {
             body: formData
         })
             .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    const img = data.data.url
+            .then(result => {
+                if (result.success) {
+                    const img = result.data.url
                     const product = {
                         name: data.name,
-                        description: data.description,
-                        price: data.price,
+                        des: data.description,
+                        pricePerPice: data.price,
                         minimumOrder: data.minimumOrder,
                         availableQuantity: data.availableQuantity,
-                        img: img
+                        image: img
                     }
+
+                    fetch('http://localhost:5000/product', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(product)
+                    })
+                        .then(res => res.json())
+                        .then(insertData => {
+                            if (insertData.insertedId) {
+                                toast('product add successfully')
+                                reset()
+                            }
+                            else {
+                                toast.error('You Can Not Add Product At The Moment ,Please Try Again Later')
+                            }
+                        })
                 }
-                console.log('imgbb', data)
+
             })
 
     }

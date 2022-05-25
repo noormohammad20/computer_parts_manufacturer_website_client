@@ -10,8 +10,8 @@ const ProductRow = ({ product, index, refetch, setDeleteProduct }) => {
 
         <tr>
             <th>{index + 1}</th>
-            <td><div class="avatar">
-                <div class="w-16 rounded">
+            <td><div className="avatar">
+                <div className="w-16 rounded">
                     <img src={image} alt="Tailwind-CSS-Avatar-component" />
                 </div>
             </div></td>
@@ -22,7 +22,7 @@ const ProductRow = ({ product, index, refetch, setDeleteProduct }) => {
             <td>
                 <label
                     onClick={() => setDeleteProduct(product)}
-                    for="delete-modal" class="btn btn-error btn-xs">Delete</label>
+                    for="delete-modal" className="btn btn-error btn-xs">Delete</label>
             </td>
         </tr>
     )

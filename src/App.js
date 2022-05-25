@@ -21,6 +21,7 @@ import Payment from './Pages/Dashboard/Payment'
 import NotFound from './Pages/Shared/NotFound'
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders'
 import MyPortfolio from './Pages/Shared/MyPortfolio'
+import Blogs from './Pages/Shared/Blogs'
 
 function App() {
   return (
@@ -30,14 +31,15 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='/myPortfolio' element={<MyPortfolio />} />
+        <Route path='/blogs' element={<Blogs />} />
         <Route path='/product/:id' element={
           <RequireAuth>
             <Purchase />
           </RequireAuth>} />
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} >
-          <Route index element={<MyOrders />} />
+          <Route index element={<MyProfile />} />
           <Route path='/dashboard/myReview' element={<AddReview />} />
-          <Route path='/dashboard/myProfile' element={<MyProfile />} />
+          <Route path='/dashboard/myOrders' element={<MyOrders />} />
           <Route path='/dashboard/payment/:id' element={<Payment />} />
           <Route path='/dashboard/users' element={<RequireAdmin><Users /></RequireAdmin>} />
           <Route path='/dashboard/addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />

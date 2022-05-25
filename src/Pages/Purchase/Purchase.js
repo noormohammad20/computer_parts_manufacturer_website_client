@@ -60,35 +60,35 @@ const Purchase = () => {
     }, [quantity, minimumOrder, availableQuantity])
 
     return (
-        <div class="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200">
             <form onSubmit={handleOrder}>
-                <div class="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className='flex justify-center items-center '>
-                        <div class="card w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card w-full max-w-sm shadow-2xl bg-base-100">
                             <h1 className='text-2xl font-bold text-center text-secondary mt-2'>Your Info</h1>
-                            <div class="card-body">
-                                <div class="form-control">
-                                    <input disabled type="text" placeholder="email" class="input input-bordered" value={user?.displayName} />
+                            <div className="card-body">
+                                <div className="form-control">
+                                    <input disabled type="text" placeholder="email" className="input input-bordered" value={user?.displayName} />
                                 </div>
 
-                                <div class="form-control">
-                                    <input disabled type="text" class="input input-bordered" value={user?.email} />
+                                <div className="form-control">
+                                    <input disabled type="text" className="input input-bordered" value={user?.email} />
                                 </div>
-                                <div class="form-control">
-                                    <input placeholder='Phone' type="number" name="phone" class="input input-bordered" />
+                                <div className="form-control">
+                                    <input placeholder='Phone' type="number" name="phone" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <input type="text" placeholder="address" name="address" class="input input-bordered" />
+                                <div className="form-control">
+                                    <input type="text" placeholder="address" name="address" className="input input-bordered" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card card-compact w-96 bg-base-100 shadow-xl">
                             <h1 className='text-3xl text-accent font-bold text-center mt-3'>Product Detail</h1>
                             <figure><img src={image} alt="Shoes" /></figure>
-                            <div class="card-body">
-                                <h2 class="card-title">name:{name}</h2>
+                            <div className="card-body">
+                                <h2 className="card-title">name:{name}</h2>
                                 <small className='font-bold'>{description}</small>
                                 <p><span className='font-bold'>Price(per unit): ${pricePerPice}</span></p>
                                 <p><span className='font-bold'>min order: {minimumOrder} Pice</span></p>
@@ -99,7 +99,7 @@ const Purchase = () => {
                                     type="number"
                                     name='orderQuantity'
                                     minValue={minimumOrder}
-                                    placeholder="your quantity" class="input input-bordered form-control" />
+                                    placeholder="your quantity" className="input input-bordered form-control" />
 
                                 {
                                     quantity ? <input disabled type="submit" value="confirm order" className="btn btn-secondary w-full max-w-xs " /> : <input type="submit" value="confirm order" className="btn btn-secondary w-full max-w-xs" />

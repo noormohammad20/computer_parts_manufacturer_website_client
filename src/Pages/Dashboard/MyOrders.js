@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 import auth from '../../firebase.init'
+import Loading from '../../Pages/Shared/Loading'
 import OrderDeleteModal from './OrderDeleteModal'
 
 const MyOrders = () => {
-    const [orders, setOrders] = useState([])
+
     const [cancelOrder, setCancelOrder] = useState(null)
     const [user] = useAuthState(auth)
 
-    useEffect(() => {
-        if (user) {
-            fetch(`https://salty-island-81432.herokuapp.com/myOrder/${user.email}`)
-                .then(res => res.json())
-                .then(data => {
-                    setOrders(data)
-                })
-        }
-    }, [user])
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://salty-island-81432.herokuapp.com/myOrder/${user.email}`, {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        },
+    })
+        .then(res => res.json()))
+
+    if (isLoading) {
+        return <Loading />
+    }
+
 
     return (
         <div>
@@ -51,6 +55,7 @@ const MyOrders = () => {
                                 <td>
                                     {(order.price && !order.paid) && <>
                                         <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>
+
                                         <label
                                             onClick={() => setCancelOrder(order)}
                                             for="order-delete-modal" class="btn btn-xs btn-error">Cancel</label>
@@ -71,6 +76,8 @@ const MyOrders = () => {
             {
                 cancelOrder && <OrderDeleteModal
                     cancelOrder={cancelOrder}
+                    refetch={refetch}
+                    setCancelOrder={setCancelOrder}
                 ></OrderDeleteModal>
             }
         </div>

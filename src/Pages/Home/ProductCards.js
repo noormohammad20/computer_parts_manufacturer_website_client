@@ -13,7 +13,7 @@ const ProductCards = ({ product }) => {
                 <img src={image} alt={name} className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
+                <h2 className="text-xl font-bold text-center">{name}</h2>
                 <span>{description}</span>
                 <small className='text-2xl font-bold'>Price: <span className='text-primary'>${pricePerPice}</span></small>
                 <small className='font-bold '>Minimum Order: <span className='text-primary'> {minimumOrder}</span></small>

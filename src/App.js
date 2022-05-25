@@ -18,6 +18,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin'
 import AddProduct from './Pages/Dashboard/AddProduct'
 import ManageProduct from './Pages/Dashboard/ManageProduct'
 import Payment from './Pages/Dashboard/Payment'
+import NotFound from './Pages/Shared/NotFound'
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         </Route>
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<Signup />} />
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <ToastContainer />
     </div>

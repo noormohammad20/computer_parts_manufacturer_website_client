@@ -1,39 +1,27 @@
-import { signOut } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import auth from '../../firebase.init'
+import OrderDeleteModal from './OrderDeleteModal'
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
+    const [cancelOrder, setCancelOrder] = useState(null)
     const [user] = useAuthState(auth)
-    const navigate = useNavigate()
+
     useEffect(() => {
         if (user) {
-            fetch(`https://salty-island-81432.herokuapp.com/order/${user.email}`, {
-                method: 'GET',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                },
-            })
-                .then(res => {
-                    if (res.status === 401 || res.status === 403) {
-                        signOut(auth)
-                        localStorage.removeItem('accessToken')
-                        navigate('/')
-                    }
-
-                    return res.json()
-                })
+            fetch(`https://salty-island-81432.herokuapp.com/myOrder/${user.email}`)
+                .then(res => res.json())
                 .then(data => {
-
                     setOrders(data)
                 })
         }
-    }, [user, navigate])
+    }, [user])
 
     return (
         <div>
+
             <h2>Your Orders: {orders?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -61,7 +49,13 @@ const MyOrders = () => {
                                 <td>{order.userPhone}</td>
                                 <td>{order.price}</td>
                                 <td>
-                                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    {(order.price && !order.paid) && <>
+                                        <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>
+                                        <label
+                                            onClick={() => setCancelOrder(order)}
+                                            for="order-delete-modal" class="btn btn-xs btn-error">Cancel</label>
+
+                                    </>}
 
                                     {(order.price && order.paid) && <div><span className='text-green-500'>Paid</span>
                                         <p>TransactionId:<span className='text-orange-500'>{order.transactionId}</span></p>
@@ -74,6 +68,11 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
+            {
+                cancelOrder && <OrderDeleteModal
+                    cancelOrder={cancelOrder}
+                ></OrderDeleteModal>
+            }
         </div>
     )
 }

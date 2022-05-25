@@ -23,7 +23,7 @@ const Purchase = () => {
             productId: _id,
             productName: name,
             userName: user.name,
-            userEmail: user.email,
+            email: user.email,
             userPhone: e.target.phone.value,
             userAddress: e.target.address.value,
             orderQuantity: e.target.orderQuantity.value,

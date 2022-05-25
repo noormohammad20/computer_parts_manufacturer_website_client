@@ -21,7 +21,7 @@ const ProductCards = ({ product }) => {
                 <div className="card-actions">
                     <button
                         onClick={() => navigateToPurchase(_id)}
-                        className="btn btn-primary">Buy Now</button>
+                        className="btn btn-primary w-64 inline-block mx-auto ">Buy Now</button>
                 </div>
             </div>
         </div>

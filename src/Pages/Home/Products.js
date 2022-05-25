@@ -9,7 +9,7 @@ const Products = () => {
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
 
                 {
-                    products.map((product, index) => <ProductCards
+                    products.slice(1.6).map((product, index) => <ProductCards
                         key={index}
                         product={product}
                     ></ProductCards>)

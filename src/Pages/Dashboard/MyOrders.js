@@ -10,14 +10,13 @@ const MyOrders = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
+            fetch(`http://localhost:5000/order/${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
             })
                 .then(res => {
-                    console.log('res', res)
                     if (res.status === 401 || res.status === 403) {
                         signOut(auth)
                         localStorage.removeItem('accessToken')

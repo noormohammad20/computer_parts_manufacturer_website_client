@@ -19,7 +19,7 @@ const MyProfile = () => {
             linkedinProfile: data.linkedinProfile,
         }
 
-        fetch('http://localhost:5000/myProfile', {
+        fetch('https://salty-island-81432.herokuapp.com/myProfile', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

@@ -16,7 +16,7 @@ const AddReview = () => {
             review: data.review,
             rating: rating,
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://salty-island-81432.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

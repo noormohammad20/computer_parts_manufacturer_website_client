@@ -10,7 +10,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order/${user.email}`, {
+            fetch(`https://salty-island-81432.herokuapp.com/order/${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

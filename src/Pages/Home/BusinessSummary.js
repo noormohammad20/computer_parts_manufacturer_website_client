@@ -2,7 +2,7 @@ import React from 'react'
 
 const BusinessSummary = () => {
     return (
-        <>
+        <section className='container mx-auto'>
             <h2 className='text-5xl text-accent text-center font-bold my-10'>Summary</h2>
             <div className="stats shadow h-50% w-full my-5 ">
 
@@ -38,7 +38,7 @@ const BusinessSummary = () => {
                 </div>
 
             </div>
-        </>
+        </section>
     )
 }
 

@@ -138,7 +138,7 @@ const MyProfile = () => {
 
 
 
-                <input className="btn btn-primary form-control w-full max-w-xs mt-2" type="submit" value='Add Product' />
+                <input className="btn btn-primary form-control w-full max-w-xs mt-2" type="submit" value='Add MyProfile' />
             </form>
         </div>
     )

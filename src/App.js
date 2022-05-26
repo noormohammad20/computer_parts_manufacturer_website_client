@@ -22,6 +22,8 @@ import NotFound from './Pages/Shared/NotFound'
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders'
 import MyPortfolio from './Pages/Shared/MyPortfolio'
 import Blogs from './Pages/Shared/Blogs'
+import LoadMyProfile from './Pages/Dashboard/LoadMyProfile'
+import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
           </RequireAuth>} />
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route index element={<MyProfile />} />
+          <Route path='/dashboard/loadMyProfile' element={<LoadMyProfile />} />
+          <Route path='/dashboard/updateProfile' element={<UpdateProfile />} />
           <Route path='/dashboard/myReview' element={<AddReview />} />
           <Route path='/dashboard/myOrders' element={<MyOrders />} />
           <Route path='/dashboard/payment/:id' element={<Payment />} />

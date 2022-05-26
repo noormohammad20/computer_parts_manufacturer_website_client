@@ -58,7 +58,7 @@ const MyOrders = () => {
 
                                         <label
                                             onClick={() => setCancelOrder(order)}
-                                            for="order-delete-modal" class="btn btn-xs btn-error">Cancel</label>
+                                            for="order-delete-modal" className="btn btn-xs btn-error">Cancel</label>
 
                                     </>}
 

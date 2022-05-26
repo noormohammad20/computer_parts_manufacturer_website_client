@@ -35,7 +35,7 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <h2 className='text-3xl font-bold text-secondary'>Profile</h2>
+            <h2 className='text-3xl font-bold text-secondary'>My Profile</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">

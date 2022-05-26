@@ -65,7 +65,7 @@ const Purchase = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className='flex justify-center items-center '>
                         <div className="card w-full max-w-sm shadow-2xl bg-base-100">
-                            <h1 className='text-2xl font-bold text-center text-secondary mt-2'>Your Info</h1>
+                            <h1 className='text-3xl font-bold text-center text-primary mt-2'>Your Info</h1>
                             <div className="card-body">
                                 <div className="form-control">
                                     <input disabled type="text" placeholder="email" className="input input-bordered" value={user?.displayName} />
@@ -85,14 +85,16 @@ const Purchase = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                            <h1 className='text-3xl text-accent font-bold text-center mt-3'>Product Detail</h1>
-                            <figure><img src={image} alt="Shoes" /></figure>
+                            <h1 className='text-3xl text-primary font-bold text-center my-3'>Purchase Detail</h1>
+                            <img
+                                style={{ height: '25vh', objectFit: 'contain' }}
+                                src={image} alt={name} />
                             <div className="card-body">
-                                <h2 className="card-title">name:{name}</h2>
-                                <small className='font-bold'>{description}</small>
-                                <p><span className='font-bold'>Price(per unit): ${pricePerPice}</span></p>
-                                <p><span className='font-bold'>min order: {minimumOrder} Pice</span></p>
-                                <p><span className='font-bold'>available: {availableQuantity} Pice</span></p>
+                                <h2 className="card-title">Name: {name}</h2>
+                                <small className='font-bold'>Description:  {description}</small>
+                                <p><span className='font-bold'>Price(par peace): ${pricePerPice}</span></p>
+                                <p><span className='font-bold'>Min Order: {minimumOrder} Pice</span></p>
+                                <p><span className='font-bold'>Available: {availableQuantity} Peace</span></p>
 
                                 <input
                                     onChange={handleQuantity}
@@ -102,10 +104,28 @@ const Purchase = () => {
                                     placeholder="your quantity" className="input input-bordered form-control" />
 
                                 {
-                                    quantity ? <input disabled type="submit" value="confirm order" className="btn btn-secondary w-full max-w-xs " /> : <input type="submit" value="confirm order" className="btn btn-secondary w-full max-w-xs" />
+                                    quantity ? <input disabled type="submit"
+                                        style={{
+                                            marginTop: 'auto',
+                                            color: '#fff',
+                                            borderRadius: ' 20px 0px 20px 0px',
+                                            paddingRight: '1.5rem',
+                                            paddingLeft: '1.5rem',
+                                            border: ' none',
+                                            width: '50%'
+                                        }}
+                                        value="confirm order" className="btn btn-secondary  max-auto " /> : <input type="submit"
+                                            style={{
+                                                marginTop: 'auto',
+                                                color: '#fff',
+                                                borderRadius: ' 20px 0px 20px 0px',
+                                                paddingRight: '1.5rem',
+                                                paddingLeft: '1.5rem',
+                                                border: ' none',
+                                                width: '50%'
+                                            }}
+                                            value="confirm order" className="btn btn-secondary mx-auto " />
                                 }
-
-
                             </div>
                         </div>
                     </div>

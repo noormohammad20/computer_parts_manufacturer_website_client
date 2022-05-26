@@ -13,10 +13,10 @@ const LoadMyProfile = () => {
     return (
         <div>
             <h2 className='text-4xl font-bold text-primary text-center mb-8'>My Profile</h2>
-            <div class="card max-w-sm bg-base-100 mx-auto  p-8  shadow-xl">
+            <div className="card max-w-sm bg-base-100 mx-auto  p-8  shadow-xl">
                 {
                     profile.map((myProf) =>
-                        <div class="text-2xl font-bold mt-8 ">
+                        <div className="text-2xl font-bold mt-8 ">
                             <h2 className='mt-4' >Name: {myProf.name}</h2>
                             <p className='mt-4'>Email: {myProf.email}</p>
                             <p className='mt-4'>Education: {myProf.education}</p>

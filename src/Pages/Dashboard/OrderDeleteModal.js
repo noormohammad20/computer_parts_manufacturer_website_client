@@ -27,17 +27,17 @@ const OrderDeleteModal = ({ cancelOrder, refetch, setCancelOrder }) => {
 
     return (
         <div>
-            <input type="checkbox" id="order-delete-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are You Sure You Want To Cancel The Order Of <span className='text-red-500'>{productName}</span>!</h3>
+            <input type="checkbox" id="order-delete-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Are You Sure You Want To Cancel The Order Of <span className='text-red-500'>{productName}</span>!</h3>
 
-                    <div class="modal-action">
+                    <div className="modal-action">
                         <label
                             onClick={() => handleDelete()}
-                            class="btn btn-xs btn-error">Delete</label>
+                            className="btn btn-xs btn-error">Delete</label>
 
-                        <label for="order-delete-modal" class="btn btn-xs">Cancel</label>
+                        <label for="order-delete-modal" className="btn btn-xs">Cancel</label>
                     </div>
                 </div>
             </div>
